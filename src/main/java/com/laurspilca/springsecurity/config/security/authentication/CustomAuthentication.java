@@ -2,19 +2,23 @@ package com.laurspilca.springsecurity.config.security.authentication;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class CustomAuthentication implements Authentication {
     private boolean authentication;
     private final String key;
+
+    @Override
+    public boolean isAuthenticated() {
+        return authentication;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -34,11 +38,6 @@ public class CustomAuthentication implements Authentication {
     @Override
     public Object getPrincipal() {
         return null;
-    }
-
-    @Override
-    public boolean isAuthenticated() {
-        return false;
     }
 
     @Override

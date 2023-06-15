@@ -1,8 +1,6 @@
 package com.laurspilca.springsecurity.config;
 
 import com.laurspilca.springsecurity.config.security.filters.ApiKeyFilter;
-import com.laurspilca.springsecurity.config.security.filters.CustomAuthenticationFilter;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
